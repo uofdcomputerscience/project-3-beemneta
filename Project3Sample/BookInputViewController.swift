@@ -28,6 +28,13 @@ class BookInputViewController: UIViewController {
     @IBAction func pubYear(_ sender: UITextField) {
     }
     @IBAction func doneButton(_ sender: UIButton) {
+        let title = titleEntry.text
+        let author = authorEntry.text
+        let year = pubYear.text
+        let imageurl = imageURL
+        
+       // let book = Book(id: <#T##Int?#>, title: title, author: author, published: year, imageURLString: imageurl)
+        
     }
     @IBOutlet weak var doneButton: UIButton!
 }

@@ -21,6 +21,8 @@
 		4670DA9423809A4700487601 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA9323809A4700487601 /* Review.swift */; };
 		4670DA9623809A5000487601 /* BookService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA9523809A5000487601 /* BookService.swift */; };
 		4670DA9823809A5900487601 /* ReviewService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4670DA9723809A5900487601 /* ReviewService.swift */; };
+		4C1BA96023962AFE000DF3BD /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA95F23962AFE000DF3BD /* BookCell.swift */; };
+		4C1BA964239647CC000DF3BD /* ReviewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1BA963239647CC000DF3BD /* ReviewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		4670DA9323809A4700487601 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		4670DA9523809A5000487601 /* BookService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookService.swift; sourceTree = "<group>"; };
 		4670DA9723809A5900487601 /* ReviewService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewService.swift; sourceTree = "<group>"; };
+		4C1BA95F23962AFE000DF3BD /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		4C1BA963239647CC000DF3BD /* ReviewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,8 @@
 				4670DA87238099F800487601 /* BookDetailViewController.swift */,
 				4670DA8923809A0500487601 /* BookInputViewController.swift */,
 				4670DA8B23809A1C00487601 /* ReviewListViewController.swift */,
+				4C1BA95F23962AFE000DF3BD /* BookCell.swift */,
+				4C1BA963239647CC000DF3BD /* ReviewCell.swift */,
 				4670DA8D23809A2800487601 /* ReviewDetailViewController.swift */,
 				4670DA8F23809A3300487601 /* ReviewInputViewController.swift */,
 				4670DA9123809A3A00487601 /* Book.swift */,
@@ -162,6 +168,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C1BA96023962AFE000DF3BD /* BookCell.swift in Sources */,
 				4670DA9823809A5900487601 /* ReviewService.swift in Sources */,
 				4670DA8C23809A1C00487601 /* ReviewListViewController.swift in Sources */,
 				4670DA86238099DC00487601 /* BookListViewController.swift in Sources */,
@@ -171,6 +178,7 @@
 				4670DA9023809A3300487601 /* ReviewInputViewController.swift in Sources */,
 				4670DA9623809A5000487601 /* BookService.swift in Sources */,
 				4670DA8E23809A2800487601 /* ReviewDetailViewController.swift in Sources */,
+				4C1BA964239647CC000DF3BD /* ReviewCell.swift in Sources */,
 				4670DA9223809A3A00487601 /* Book.swift in Sources */,
 				4670DA88238099F800487601 /* BookDetailViewController.swift in Sources */,
 			);
@@ -318,7 +326,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Project3Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -336,7 +344,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = Project3Sample/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
