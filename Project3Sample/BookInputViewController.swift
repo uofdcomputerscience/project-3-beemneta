@@ -10,6 +10,7 @@ import UIKit
 
 class BookInputViewController: UIViewController {
     
+    let bookService = BookService.shared
     
     @IBAction func titleEntry(_ sender: UITextField) {
     }
@@ -31,10 +32,23 @@ class BookInputViewController: UIViewController {
         let title = titleEntry.text
         let author = authorEntry.text
         let year = pubYear.text
-        let imageurl = imageURL
+        let imageurl = imageURL.text
         
-       // let book = Book(id: <#T##Int?#>, title: title, author: author, published: year, imageURLString: imageurl)
+        let book = Book(id: nil, title: title!, author: author!, published: year!, imageURLString: imageurl!)
+        
+        submitBook(book: book)
         
     }
+    
+    func submitBook(book: Book){
+        bookService.createBook(book: book, completion: {
+            print ("Book Created")
+           
+        })
+            
+    }
+    
     @IBOutlet weak var doneButton: UIButton!
 }
+
+

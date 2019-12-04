@@ -14,19 +14,18 @@ class ReviewInputViewController: UIViewController {
     
     @IBOutlet weak var reviewerName: UITextField!
     
-    @IBAction func reviewerName(_ sender: UITextField) {
-    }
+   
     
-    @IBOutlet weak var dateLabel: UILabel!
+   
   
     @IBAction func reviewDone(_ sender: UIButton) {
         let name = reviewerName.text!
-       // let id = bookID.text!
+        let id = bookID.text!
         let title = reviewTitle.text!
         let body = reviewBody.text!
-      //  let review = Review(id: <#T##Int?#>, bookId:12, date: <#T##Date?#>, reviewer: name, title: title, body: body)
+        let review = Review(id: nil, bookId:Int(id)!, date: nil, reviewer: name, title: title, body: body)
         
-       // submitReview(review: review)
+        submitReview(review: review)
         
     }
     
@@ -38,14 +37,12 @@ class ReviewInputViewController: UIViewController {
     
     
     @IBOutlet weak var reviewDone: UIButton!
-    @IBOutlet weak var reviewDate: UILabel!
+   
     @IBOutlet weak var reviewTitle: UITextField!
-    @IBAction func reviewTitle(_ sender: UITextField) {
-    }
+   
     @IBOutlet weak var reviewBody: UITextView!
     
-    @IBAction func bookID(_ sender: UITextField) {
-    }
+   
     @IBOutlet weak var bookID: UITextField!
     
     

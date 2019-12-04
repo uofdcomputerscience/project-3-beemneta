@@ -12,15 +12,27 @@ class BookListViewController: UIViewController {
     
     @IBOutlet weak var bookTable: UITableView!
     
+    
+    
+    var reloader = 0
     let bookService = BookService.shared
     
-    override func viewDidLoad() {       
+    @IBAction func refreshButton(_ sender: UIButton) {
+        self.bookService.fetchBooks {
+            DispatchQueue.main.async {
+            self.bookTable.reloadData()
+            }
+        }
+        
+    }
+    
+    override func viewDidLoad() {
         super.viewDidLoad()        
             self.bookService.fetchBooks {
              DispatchQueue.main.async {
             self.bookTable.reloadData()
             }
-            
+               
         }
         bookTable.dataSource = self
         bookTable.delegate = self
@@ -37,9 +49,7 @@ extension BookListViewController: UITableViewDataSource {
         let bauthor = bookService.books[indexPath.item].author
         let btitle = bookService.books[indexPath.item].title
         let byear = bookService.books[indexPath.item].published
-        //let bid = bookService.books[indexPath.item].id
-        //let burl = bookService.books[indexPath.item].imageURL
-        
+       
         let cell = tableView.dequeueReusableCell(withIdentifier: "BookCell")!
         if let BookCell = cell as?
             BookCell{
@@ -73,10 +83,6 @@ extension BookListViewController: UITableViewDataSource {
 extension BookListViewController: UITableViewDelegate{    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let so = bookService.books[indexPath.item]
-        
-        
-        
-        
         let vc = storyboard?.instantiateViewController(identifier: "BookDetailViewController") as! BookDetailViewController
         
         vc.bAuthor = so.author

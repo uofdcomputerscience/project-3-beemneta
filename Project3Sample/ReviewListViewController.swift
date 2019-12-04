@@ -27,6 +27,13 @@ class ReviewListViewController: UIViewController {
     }
  
     
+    @IBAction func refreshButton(_ sender: UIButton) {
+        self.reviewService.fetchReviews {
+            DispatchQueue.main.async {
+                      self.reviewTable.reloadData()
+                   }
+        }
+    }
     
     
 }
@@ -40,9 +47,7 @@ extension ReviewListViewController: UITableViewDataSource {
         let reviewer = reviewService.reviews[indexPath.item].reviewer
         let bookID = reviewService.reviews[indexPath.item].bookId
         let rTitle = reviewService.reviews[indexPath.item].title
-       // let rBody = reviewService.reviews[indexPath.item].body
-       // let rDate = reviewService.reviews[indexPath.item].date
-        //let rID = reviewService.reviews[indexPath.item].id
+       
       
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewCell")!
         if let ReviewCell = cell as?
@@ -57,7 +62,7 @@ extension ReviewListViewController: UITableViewDataSource {
     }
     
     func fillReviewer (ReviewCell: ReviewCell, string:String){
-        ReviewCell.reviewedBy.text = "Reviewr: \(string)"
+        ReviewCell.reviewedBy.text = "Reviewer: \(string)"
     }
     func fillTitle (ReviewCell: ReviewCell, string:String){
         ReviewCell.reviewTitle.text = "Review Title: \(string)"
@@ -76,7 +81,6 @@ extension  ReviewListViewController: UITableViewDelegate{
         let vc = storyboard?.instantiateViewController(identifier: "ReviewDetailViewController") as! ReviewDetailViewController
         vc.ireBody = so.body
         vc.iBid = String(so.bookId)
-        //vc.iDate = String(so.date!)
         vc.iID = String(so.id!)
         vc.ireviewedBy = so.reviewer
         vc.iTitle = so.title        

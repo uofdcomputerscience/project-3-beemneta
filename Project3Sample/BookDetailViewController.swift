@@ -32,7 +32,9 @@ class BookDetailViewController: UIViewController {
         bookTitle.text = bTitle
         
         
-        postImage(url: bImageurl!)
+        if bImageurl != nil {
+            postImage(url: bImageurl!)
+        } 
     }
     
     func postImage (url: URL) {

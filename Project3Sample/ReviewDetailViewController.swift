@@ -31,7 +31,7 @@ class ReviewDetailViewController: UIViewController {
         bookID.text = "Book ID: \(iBid ?? "")"
         reviewID.text = "Review ID: \(iID ?? "")"
         reviewBody.text = ireBody
-        reviewDate.text = "Review Date: \(iDate ?? "")"
+        
 
     }
     
